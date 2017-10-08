@@ -27,6 +27,19 @@ func TestUnvisError(t *testing.T) {
 		"\\777",
 		"\\420\\322\\455",
 		"\\652\\233",
+		"\\",
+		"\\J",
+		"a bad slash: \\",
+		"testing -- \\x",
+		"\\xG0 test",
+		"  abc \\Mx",
+		"\\Mx",
+		"\\M-",
+		"\\M-\u5000",
+		"\\M^",
+		"\\^",
+		"\\^\u5000",
+		"\\M",
 	} {
 		got, err := Unvis(test, DefaultVisFlags)
 		if err == nil {

@@ -21,6 +21,14 @@ import (
 	"testing"
 )
 
+func TestVisInvalid(t *testing.T) {
+	// Add some invalid flag.
+	enc, err := Vis("some input", 0xffffffff)
+	if err == nil {
+		t.Errorf("expected error with invalid flag, got none [enc=%q]", enc)
+	}
+}
+
 func TestVisUnchanged(t *testing.T) {
 	for _, test := range []struct {
 		input string

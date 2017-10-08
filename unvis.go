@@ -287,8 +287,5 @@ func Unvis(input string, flag VisFlag) (string, error) {
 	if err != nil {
 		return "", fmt.Errorf("unvis: %s", err)
 	}
-	if !p.End() {
-		return "", fmt.Errorf("unvis: trailing characters at end of input")
-	}
 	return output, nil
 }
